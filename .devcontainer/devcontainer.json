@@ -1,0 +1,26 @@
+{
+  "name": "EvaluaFacil DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bun.vscode-bun-extension",
+        "astro-build.astro-vscode",
+        "bradlc.vscode-tailwindcss",
+        "James-Yu.latex-workshop"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "bun.vscode-bun-extension",
+        "latex-workshop.latex.recipe.default": "xelatex"
+      }
+      
+    }
+  },
+  "forwardPorts": [
+    4321
+  ],
+  "postCreateCommand": "bun install && bun run latex:check",
+  "remoteUser": "root"
+}
